@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string  :email, index: true
       t.string  :first_name
       t.string  :last_name
+      t.string  :github_username
       t.string  :password_digest
       t.integer :role, default: 0
 
