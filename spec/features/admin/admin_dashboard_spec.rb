@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature "An admin visiting the admin dashboard" do
   scenario "can see all tutorials" do
-    admin = create(:admin)
+    admin = create(:admin, github_username: "froydroyce")
     create_list(:tutorial, 2)
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)

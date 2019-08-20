@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "An Admin can edit a tutorial" do
   let(:tutorial) { create(:tutorial) }
-  let(:admin)    { create(:admin) }
+  let(:admin)    { create(:admin, github_username: "froydroyce") }
 
   scenario "by adding a video", :js, :vcr do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)

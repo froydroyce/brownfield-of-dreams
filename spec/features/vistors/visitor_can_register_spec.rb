@@ -1,10 +1,11 @@
 require 'rails_helper'
 
-describe 'vister can create an account', :js do
+describe 'vister can create an account', :js, :vcr do
   it ' visits the home page' do
     email = 'jimbob@aol.com'
     first_name = 'Jim'
     last_name = 'Bob'
+    github_username = 'froydroyce'
     password = 'password'
     password_confirmation = 'password'
 
@@ -21,8 +22,9 @@ describe 'vister can create an account', :js do
     fill_in 'user[email]', with: email
     fill_in 'user[first_name]', with: first_name
     fill_in 'user[last_name]', with: last_name
+    fill_in 'user[github_username]', with: github_username
     fill_in 'user[password]', with: password
-    fill_in 'user[password_confirmation]', with: password
+    fill_in 'user[password_confirmation]', with: password_confirmation
 
     click_on'Create Account'
 
