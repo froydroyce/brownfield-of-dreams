@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  def current_user
+    @current_admin ||= current_user.admin? if session[:user_id]
+  end
+
   def github_token
     @github_token ||= current_user.github_credentials if current_user.github_credentials
   end
