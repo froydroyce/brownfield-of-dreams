@@ -30,6 +30,10 @@
   <% end %>
 
   <% if github_token %>
+    <section class="invite">
+      <%= button_to "Send an Invite", new_invite_path, method: 'get', class: "btn btn-primary mb1 bg-teal" %>
+    </section>
+
     <section class="github">
       <h1>Github</h1>
 

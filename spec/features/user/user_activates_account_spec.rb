@@ -33,8 +33,7 @@ describe 'As a inactive user' do
       email = open_email(user.email)
       expect(email).to deliver_to(user.email)
 
-
-      page.driver.submit :patch, "/activate_account/#{user.id}", {}
+      page.driver.submit :get, "/activate_account/#{user.id}", {}
 
       expect(current_path).to eq(dashboard_path)
       expect(page).to have_content('Your account has been activated.')

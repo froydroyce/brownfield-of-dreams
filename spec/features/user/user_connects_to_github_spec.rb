@@ -23,7 +23,7 @@ describe 'As a user' do
         click_button 'Connect to Github'
 
         expect(current_path).to eq(dashboard_path)
-        save_and_open_page
+
         expect(page).to have_css('.github')
         expect(page).to have_css('.followers')
         expect(page).to have_css('.following')

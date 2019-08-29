@@ -31,12 +31,14 @@ Rails.application.routes.draw do
   delete '/logout', to: "sessions#destroy"
 
   get '/dashboard', to: 'users#show'
-  patch '/activate_account/:user_id', to: 'users#update'
+  get '/activate_account/:user_id', to: 'users#update'
   get '/about', to: 'about#show'
   get '/get_started', to: 'get_started#show'
 
   # Is this being used?
   get '/video', to: 'video#show'
+
+  resources :invites, only: [:new, :create]
 
   resources :users, only: [:new, :create, :update, :edit]
 
