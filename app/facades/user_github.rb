@@ -1,6 +1,7 @@
 class UserGithub
-  def initialize(token)
+  def initialize(token, username = nil)
     @token = token
+    @username = username
   end
 
   def repos
@@ -21,6 +22,10 @@ class UserGithub
     end
   end
 
+  def github_user
+    GithubUser.new(user(@username, @token.token))
+  end
+
   private
 
   def user_repos(token)
@@ -33,6 +38,10 @@ class UserGithub
 
   def user_followings(token)
     @user_followings ||= service.followings(token)
+  end
+
+  def user(username, token)
+    @_github_user ||= service.user(username, token)
   end
 
   def service

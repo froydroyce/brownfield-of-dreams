@@ -123,4 +123,4 @@ User.delete_all
 User.create!(email: 'admin@example.com', first_name: 'Bossy', last_name: 'McBosserton', password:  "password", role: :admin)
 User.create!(email: 'user@example.com', first_name: 'User', last_name: 'Userton', password:  "password")
 rene = User.create!(email: 'rene@example.com', first_name: 'Rene', last_name: 'Casco', password:  "password")
-rene.tokens.create(uid: "098098", username: "renecasco", provider: "github", token: "iwfbnwipufh092837yfwiouhbf")
+rene.tokens.create(uid: "098098", email: 'rfcasco@gmail.com', username: "renecasco", provider: "github", token: "iwfbnwipufh092837yfwiouhbf")

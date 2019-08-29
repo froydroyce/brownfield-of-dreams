@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2019_08_27_170843) do
 
   create_table "tokens", force: :cascade do |t|
     t.string "username"
+    t.string "email"
     t.string "provider"
     t.string "uid"
     t.string "token"
