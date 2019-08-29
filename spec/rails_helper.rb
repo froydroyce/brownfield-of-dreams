@@ -1,6 +1,8 @@
 require 'spec_helper'
 require "email_spec"
 require "email_spec/rspec"
+require 'simplecov'
+SimpleCov.start
 
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
